@@ -1,38 +1,84 @@
+<!-- Repository structure:
+.
+├── index.html
+├── style.css
+├── script.js
+└── assets/
+    └── map.png (placeholder image of Ukraine map)
+
+--- index.html ---
 <!DOCTYPE html>
 <html lang="uk">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Radar</title>
-    <style>
-      body {
-        background-color: #000;
-        color: #fff;
-        font-family: sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-      }
-      h1 {
-        font-size: 3rem;
-        margin: 0;
-      }
-      a {
-        font-size: 1.5rem;
-        color: #0f0;
-        text-decoration: none;
-        margin-top: 20px;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Radar</h1>
-    <a href="https://t.me/Radarka" target="_blank">Перейти на Telegram</a>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Радар України</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">РАДАР УКРАЇНИ 🇺🇦</h1>
+      <p class="subtitle">Ми не є офіційним джерелом інформації</p>
+      <div class="map-wrapper">
+        <img src="assets/map.png" alt="Map of Ukraine" class="map-image">
+        <div class="map-overlay">ДЕ-Є ЗАГРОЗА?</div>
+      </div>
+    </header>
+    <main class="cards">
+      <!-- Telegram Card -->
+      <div class="card">
+        <button class="card-toggle">Підключитися в Telegram ▼</button>
+        <div class="card-content">
+          <p>Офіційний канал PatrulUA</p>
+          <a href="#" target="_blank" class="btn">Приєднатися</a>
+        </div>
+      </div>
+      <!-- Support Card -->
+      <div class="card yellow">
+        <button class="card-toggle">Підтримати фінансово 👥❤️ ▼</button>
+        <div class="card-content">
+          <p>Посилання на моно банк<br>Допомога каналу та ЗП адмінам</p>
+          <a href="#" target="_blank" class="btn">Підтримати</a>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <p>© 2024 PatrulUA. Всі права захищені.<br>Glory to Ukraine! 🇺🇦</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
+
+--- style.css ---
+/* Reset and base styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; font-family: 'Segoe UI', sans-serif; background: #1F1F1F; color: #FFFFFF; }
+.container { max-width: 400px; margin: 0 auto; padding: 20px; }
+.header { text-align: center; }
+.title { font-size: 24px; font-weight: bold; }
+.subtitle { font-size: 14px; margin-top: 4px; color: #BBBBBB; }
+.map-wrapper { position: relative; margin-top: 16px; }
+.map-image { width: 100%; border-radius: 8px; }
+.map-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font-size: 20px; font-weight: bold; text-shadow: 0 0 4px rgba(0,0,0,0.7); }
+.cards { margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
+.card { background: #FFFFFF; color: #000000; border-radius: 8px; overflow: hidden; }
+.card.yellow { background: linear-gradient(135deg, #FFDF00, #FFD300); color: #000000; }
+.card-toggle { width: 100%; text-align: left; padding: 12px; background: transparent; border: none;
+  font-size: 16px; font-weight: bold; cursor: pointer; }
+.card-content { display: none; padding: 12px; font-size: 14px; }
+.btn { display: inline-block; margin-top: 8px; padding: 8px 12px; background: #1F1F1F;
+  color: #FFFFFF; text-decoration: none; border-radius: 4px; font-size: 14px; }
+.footer { margin-top: 32px; text-align: center; font-size: 12px; color: #AAAAAA; }
+
+--- script.js ---
+// Toggle card content
+const toggles = document.querySelectorAll('.card-toggle');
+toggles.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const content = btn.nextElementSibling;
+    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+  });
+});
