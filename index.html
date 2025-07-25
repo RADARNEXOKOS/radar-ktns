@@ -21,7 +21,6 @@
     .header { text-align: center; }
     .title { font-size: 24px; font-weight: bold; }
     .subtitle { font-size: 14px; margin-top: 4px; color: #BBBBBB; }
-    /* Header photo placeholder */
     .header-photo {
       width: 100%;
       border-radius: 8px;
@@ -106,40 +105,44 @@
     <header class="header">
       <div class="title">РАДАР УКРАЇНИ 🇺🇦</div>
       <div class="subtitle">Ми не є офіційним джерелом інформації</div>
-      <!-- Поставте сюди вашу фотографію -->
-      <img src="assets/228.jpeg" alt="Header Photo" class="header-photo">
+      <!-- Ваш Header Photo -->
+      <img src="assets/228.png" alt="Header Photo" class="header-photo">
       <div class="map-wrapper">
         <img src="assets/map.png" alt="Map of Ukraine">
         <div class="map-overlay">ДЕ-Є ЗАГРОЗА?</div>
       </div>
     </header>
+
     <main class="cards">
       <div class="card">
         <button type="button" onclick="toggle(this)">
           <img src="assets/ua-flag.png" alt="UA Flag" class="btn-icon">
-          Підключитися в Telegram ▼
+          Підключити мапу шахедів ▼
         </button>
         <div class="content">
-          <p>Офіційний канал PatrulUA</p>
-          <a href="#" class="btn-link">Приєднатися</a>
+          <p>Канал перевірений військовими 🔥</p>
+          <a href="https://t.me/+f-0be4MLfREzYmIy" class="btn-link" target="_blank">Перейти</a>
         </div>
       </div>
+
       <div class="card yellow">
         <button type="button" onclick="toggle(this)">
           <img src="assets/ua-flag.png" alt="UA Flag" class="btn-icon">
           Підтримати фінансово 👥❤️ ▼
         </button>
         <div class="content">
-          <p>Посилання на моно банк<br>Допомога каналу та ЗП адмінам</p>
-          <a href="#" class="btn-link">Підтримати</a>
+          <p>Посилання на монобанк для допомоги каналу та ЗП адмінам</p>
+          <a href="https://send.monobank.ua/jar/your-monobank-link" class="btn-link" target="_blank">Підтримати</a>
         </div>
       </div>
     </main>
+
     <footer class="footer">
-      © 2024 PatrulUA. Всі права захищені.<br>
-      Glory to Ukraine! 🇺🇦
+      © 2025 PatrulUA. Всі права захищені.
+      <br>Glory to Ukraine! 🇺🇦
     </footer>
   </div>
+
   <script>
     function toggle(btn) {
       const content = btn.nextElementSibling;
